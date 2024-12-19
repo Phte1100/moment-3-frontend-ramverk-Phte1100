@@ -2,13 +2,14 @@
   <div>
     <!-- Lägg till disc-komponenten med event för att uppdatera listan -->
     <Add @updateList="updateDiscs" />
-    <table class="table">
+    <div class="table-responsive">
+    <table class="table table-striped table-hover">
       <thead>
         <tr>
           <th scope="col">Märke</th>
           <th scope="col">Modell</th>
           <th scope="col">Vikt</th>
-          <th scope="col">Testad</th>
+          <th scope="col" class="respons">Testad</th>
           <th scope="col">Åtgärder</th>
         </tr>
       </thead>
@@ -18,7 +19,7 @@
           <td>{{ disc.brand }}</td>
           <td>{{ disc.model }}</td>
           <td>{{ disc.weight }} g</td>
-          <td>{{ disc.tested ? 'Testad' : 'Otestad' }}</td>
+          <td class="respons">{{ disc.tested ? 'Testad' : 'Otestad' }}</td>
           <td>
             <button class="btn btn-outline-dark" @click="editDisc(disc)">Edit</button>
           </td>
@@ -28,6 +29,7 @@
         </tr>
       </tbody>
     </table>
+  </div>
   </div>
 </template>
 
@@ -65,3 +67,12 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+@media (max-width: 500px) {
+  .respons {
+    display: none;
+  }
+
+}
+</style>

@@ -32,7 +32,7 @@ import Hero from '../components/Hero.vue';
 }
 
 .content-section {
-  height: 100vh; /* Sektionerna täcker hela höjden av fönstret */
+  min-height: 100vh; /* Sektionerna täcker hela höjden av fönstret */
   scroll-snap-align: start; /* Snäpper sektionen till toppen vid scroll */
 }
 
@@ -54,6 +54,8 @@ import Hero from '../components/Hero.vue';
   max-width: 800px;
   padding: 20px;
   font-family: Arial, sans-serif;
+  margin-top: 15%;
+  margin-bottom: 15%;
 }
 
 .text-section ul {
